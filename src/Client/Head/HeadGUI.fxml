@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="395.0" prefWidth="470.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Head.HeadController">
+   <children>
+      <TabPane layoutX="80.0" layoutY="54.0" prefHeight="316.0" prefWidth="559.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="54.0">
+        <tabs>
+          <Tab fx:id="tabSendNotification" text="Send Notification">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="cboLevel" layoutX="109.0" layoutY="22.0" prefHeight="25.0" prefWidth="86.0" promptText="Level" />
+                        <ComboBox fx:id="cboTerm" layoutX="202.0" layoutY="22.0" prefHeight="25.0" prefWidth="86.0" promptText="Term " />
+                        <ComboBox fx:id="cboSection" layoutX="295.0" layoutY="22.0" prefHeight="25.0" prefWidth="86.0" promptText="Section" />
+                        <TextField fx:id="txtTitle" layoutX="110.0" layoutY="65.0" prefHeight="25.0" prefWidth="324.0" />
+                        <TextArea fx:id="txtBody" layoutX="109.0" layoutY="100.0" prefHeight="164.0" prefWidth="325.0" />
+                        <Label layoutX="75.0" layoutY="21.0" text="To :">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="68.0" layoutY="65.0" text="Title:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="11.0" layoutY="100.0" text="Description:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnSend" layoutX="369.0" layoutY="273.0" mnemonicParsing="false" onAction="#send" prefHeight="25.0" prefWidth="64.0" text="Send" />
+                        <Button fx:id="btnReset" layoutX="295.0" layoutY="273.0" mnemonicParsing="false" onAction="#reset" prefHeight="25.0" prefWidth="64.0" text="Reset" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="tabRequests" text="Requests">
+            <content>
+              <AnchorPane fx:id="anchorPaneRequests" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableRequests" layoutX="77.0" layoutY="33.0" prefHeight="312.0" prefWidth="470.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="columnFrom" prefWidth="123.0" text="From" />
+                            <TableColumn fx:id="colulmnTitle" prefWidth="259.0" text="Title" />
+                              <TableColumn fx:id="columnAction" prefWidth="87.0" text="Action" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Label layoutX="129.0" layoutY="14.0" text="Head Of The Department" textFill="#5ad34c">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

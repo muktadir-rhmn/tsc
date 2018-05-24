@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="443.0" prefWidth="499.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Teacher.TeacherController">
+   <children>
+      <TabPane layoutX="80.0" layoutY="54.0" prefHeight="316.0" prefWidth="559.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="54.0">
+        <tabs>
+          <Tab fx:id="tabSendNotification" text="Send Notification">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="txtTitle" layoutX="113.0" layoutY="87.0" prefHeight="25.0" prefWidth="324.0" />
+                        <TextArea fx:id="txtBody" layoutX="112.0" layoutY="122.0" prefHeight="164.0" prefWidth="325.0" />
+                        <Label layoutX="78.0" layoutY="43.0" text="To :">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="71.0" layoutY="87.0" text="Title:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="122.0" text="Description:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnSend" layoutX="372.0" layoutY="295.0" mnemonicParsing="false" onAction="#sendNotification" prefHeight="25.0" prefWidth="64.0" text="Send" />
+                        <Button fx:id="btnReset" layoutX="298.0" layoutY="295.0" mnemonicParsing="false" onAction="#reset" prefHeight="25.0" prefWidth="64.0" text="Reset" />
+                        <ComboBox fx:id="cboCourseNo" layoutX="113.0" layoutY="44.0" prefHeight="25.0" prefWidth="139.0" promptText="Course No" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="tabUploadResult" text="Upload Result">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="342.0" prefWidth="470.0">
+                     <children>
+                        <TableView fx:id="tableResult" layoutY="43.0" prefHeight="239.0" prefWidth="470.0" AnchorPane.bottomAnchor="78.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="43.0">
+                          <columns>
+                            <TableColumn fx:id="columnResultStudentId" prefWidth="372.0" text="StudentId" />
+                            <TableColumn fx:id="columnResultMarks" minWidth="0.0" prefWidth="126.0" text="Marks" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="7.0" layoutY="7.0" text="To :">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cboResultCourseNo" layoutX="43.0" layoutY="8.0" prefHeight="25.0" prefWidth="121.0" promptText="Course No" />
+                        <TextField fx:id="txtResultMark" layoutX="251.0" layoutY="314.0" prefHeight="25.0" prefWidth="83.0" />
+                        <Button fx:id="btnResultAdd" layoutX="343.0" layoutY="314.0" mnemonicParsing="false" onAction="#addTableItem" prefHeight="25.0" prefWidth="72.0" text="Add" />
+                        <Label layoutX="130.0" layoutY="286.0" text="StudentId">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="268.0" layoutY="286.0" text="Marks">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnResultSend" layoutX="268.0" layoutY="8.0" mnemonicParsing="false" onAction="#sendResult" prefHeight="25.0" prefWidth="107.0" text="Send" />
+                        <Button fx:id="btnResultReset" layoutX="379.0" layoutY="8.0" mnemonicParsing="false" onAction="#resetResult" prefHeight="25.0" prefWidth="107.0" text="Reset" />
+                        <ComboBox fx:id="cboResultType" layoutX="166.0" layoutY="8.0" prefHeight="25.0" prefWidth="98.0" promptText="Type" />
+                        <TextField fx:id="txtResultRoll" layoutX="188.0" layoutY="314.0" prefHeight="25.0" prefWidth="42.0" />
+                        <TextField fx:id="txtResultCode" layoutX="120.0" layoutY="314.0" prefHeight="25.0" prefWidth="64.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="ClassNote Upload">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="cboClassNoteCourseNo" layoutX="162.0" layoutY="64.0" prefHeight="25.0" prefWidth="121.0" promptText="Course No" />
+                        <Label layoutX="87.0" layoutY="63.0" text="Course:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="117.0" layoutY="114.0" prefHeight="27.0" prefWidth="40.0" text="File:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnClassNoteBrowse" layoutX="164.0" layoutY="115.0" mnemonicParsing="false" onAction="#browseClassNote" prefHeight="25.0" prefWidth="122.0" text="Browse" />
+                        <Label fx:id="lblClassNote" layoutX="164.0" layoutY="141.0" text="No file selected">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnClassNoteSend" layoutX="160.0" layoutY="177.0" mnemonicParsing="false" onAction="#sendClassNote" prefHeight="35.0" prefWidth="127.0" text="Send" />
+                        <ProgressBar fx:id="progressBar" layoutX="58.0" layoutY="300.0" prefHeight="21.0" prefWidth="405.0" progress="0.0" />
+                        <Label fx:id="lblClassNoteProgress" layoutX="58.0" layoutY="265.0" text="No file selected">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Label layoutX="194.0" layoutY="14.0" text="Teacher" textFill="#5ad34c">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
